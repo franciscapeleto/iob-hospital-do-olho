@@ -332,21 +332,43 @@
     /* ── CONVÊNIOS ── */
     .convenios-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 16px;
       margin-top: 40px;
     }
     @media (max-width: 900px) { .convenios-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .convenios-grid { grid-template-columns: repeat(2, 1fr); } }
-    .convenio-card {
-      border: 1px solid var(--gray-soft); border-radius: var(--radius); padding: 24px 16px;
-      text-align: center; background: white; transition: all .2s;
-      font-size: 13px; font-weight: 500; color: var(--text-body);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-      min-height: 90px;
+    .convenio-card { width:150px;
+    height:150px;
+
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+
+    padding:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
     }
-    .convenio-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+    .convenio-card:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-4px); }
     .convenio-card .conv-icon { font-size: 22px; }
+    .payment-title{
+    text-align:center;
+    font-size:28px;
+    font-weight:600;
+    color:var(--text-dark);
+    margin:50px 0 25px;
+    }
+
+    .convenio-card img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    }
+
+    .convenio-card:hover img{
+    transform:scale(1.05);
+    }
     .convenio-note { font-size: 13px; color: var(--gray-mid); margin-top: 20px; }
 
     /* ── DEPOIMENTOS ── */
@@ -567,13 +589,14 @@
     </video>
   </div>
   <div class="hero-inner">
-    <div class="hero-badge">Oftalmologia de Referência em Luís Eduardo Magalhães</div>
-    <h1 class="hero-h1">Referência em<br/><em>Oftalmologia</em><br/>no Oeste Baiano</h1>
+    <div class="hero-badge">Oftalmologia de Referência no Oeste Baiano</div>
+    <h1 class="hero-h1">Referência em<br/><em>Oftalmologia</em><br/>em Luís Eduardo Magalhães</h1>
     <p class="hero-sub">Cuidamos da sua visão com tecnologia avançada, diagnóstico preciso e atendimento humanizado para toda a família.</p>
     <div class="hero-pills">
       <span class="hero-pill">Catarata</span>
       <span class="hero-pill">Retina</span>
       <span class="hero-pill">Córnea</span>
+      <span class="hero-pill">Glaucoma</span>
       <span class="hero-pill">Exames Especializados</span>
       <span class="hero-pill">Consultas Oftalmológicas</span>
     </div>
@@ -593,14 +616,14 @@
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-num"><span class="count" data-target="30000">0</span><span>+</span></div>
-        <div class="stat-label">Pacientes Atendidos</div>
+        <div class="stat-label">Cirurgias Realizadas</div>
       </div>
       <div class="stat-item">
         <div class="stat-num"><span class="count" data-target="2">0</span></div>
         <div class="stat-label">Especialistas Referência</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span class="count" data-target="3">0</span></div>
+        <div class="stat-num"><span class="count" data-target="4">0</span></div>
         <div class="stat-label">Especialidades Avançadas</div>
       </div>
       <div class="stat-item">
@@ -618,8 +641,8 @@
     <h2 class="section-title reveal">Excelência que você <em>vê e sente</em></h2>
     <div class="section-divider reveal"></div>
     <div class="cred-grid">
-      <div class="cred-card reveal"><div class="cred-icon">🏥</div><div class="cred-title">Mais de 30.000 pacientes</div><div class="cred-desc">Uma trajetória de excelência e confiança construída com cada atendimento.</div></div>
-      <div class="cred-card reveal"><div class="cred-icon">👨‍⚕️</div><div class="cred-title">Especialistas Reconhecidos</div><div class="cred-desc">Médicos especializados em Catarata, Retina e Córnea com formação de referência.</div></div>
+      <div class="cred-card reveal"><div class="cred-icon">🏥</div><div class="cred-title">Mais de 30.000 cirurgias realizadas</div><div class="cred-desc">Uma trajetória de excelência e confiança construída com cada paciente.</div></div>
+      <div class="cred-card reveal"><div class="cred-icon">👨‍⚕️</div><div class="cred-title">Especialistas Reconhecidos</div><div class="cred-desc">Médicos especializados em Catarata, Retina, Córnea e Glaucoma com formação de referência.</div></div>
       <div class="cred-card reveal"><div class="cred-icon">🔬</div><div class="cred-title">Tecnologia de Ponta</div><div class="cred-desc">Equipamentos modernos para diagnósticos precisos e tratamentos seguros.</div></div>
       <div class="cred-card reveal"><div class="cred-icon">❤️</div><div class="cred-title">Atendimento Humanizado</div><div class="cred-desc">Cuidado personalizado para cada paciente, do diagnóstico ao acompanhamento.</div></div>
       <div class="cred-card reveal"><div class="cred-icon">📍</div><div class="cred-title">Localização Central</div><div class="cred-desc">No coração de Luís Eduardo Magalhães, de fácil acesso para toda a região.</div></div>
@@ -671,18 +694,18 @@
         <div class="doctor-photo"><img src="Samuel.jpg" alt="Dr. Samuel Reis" class="doctor-img"></div>
         <div class="doctor-info">
           <h3>Dr. Samuel Reis</h3>
-          <div class="doctor-crm">Oftalmologista · CRM-BA</div>
+          <div class="doctor-crm">Oftalmologista · CRM-BA 24047 | RQE 12568</div>
           <div class="doctor-specs"><span class="spec-tag">Retina</span><span class="spec-tag">Catarata</span><span class="spec-tag">Oft. Geral</span></div>
-          <p style="margin-top:16px;font-size:14px;color:var(--gray-mid);line-height:1.6;">Especialista em doenças da retina e cirurgia de catarata, com vasta experiência e dedicação ao atendimento de excelência.</p>
+          <p style="margin-top:16px;font-size:14px;color:var(--gray-mid);line-height:1.6;">Médico formado pela Universidade Estadual de Pernambuco. Especialista em Oftalmologia pela Universidade Federal da Bahia. Fellowship em Catarata e Retina/Vítreo pela Universidade Federal da Bahia. Título de Especialista em Oftalmologia reconhecido pelo Ministério da Educação (MEC) e pelo Conselho Brasileiro de Oftalmologia. Fellow of the International Council of Ophthalmology (FICO).</p>
         </div>
       </div>
       <div class="doctor-card reveal">
         <div class="doctor-photo"><img src="Ronaldo.jpg" alt="Dr. Ronaldo Adriano" class="doctor-img"></div>
         <div class="doctor-info">
           <h3>Dr. Ronaldo Adriano</h3>
-          <div class="doctor-crm">Oftalmologista · CRM-BA</div>
+          <div class="doctor-crm">Oftalmologista · CRM-BA 36802 | RQE 25569</div>
           <div class="doctor-specs"><span class="spec-tag">Córnea</span><span class="spec-tag">Catarata</span><span class="spec-tag">Oft. Geral</span></div>
-          <p style="margin-top:16px;font-size:14px;color:var(--gray-mid);line-height:1.6;">Especialista em doenças da córnea e cirurgia de catarata, com atuação focada em diagnósticos precisos e tratamentos modernos.</p>
+          <p style="margin-top:16px;font-size:14px;color:var(--gray-mid);line-height:1.6;">Médico formado pela Universidade Federal do Oeste da Bahia. Especialista em Oftalmologia pelo Hospital das Clínicas da Universidade Federal de Minas Gerais. Fellowship em Córnea, Catarata e Cirurgia Refrativa pelo Instituto da Visão. Título de Especialista em Oftalmologia reconhecido pelo Ministério da Educação (MEC) e pelo Conselho Brasileiro de Oftalmologia.</p>
         </div>
       </div>
     </div>
@@ -732,19 +755,83 @@
 <section id="convenios">
   <div class="container">
     <div class="section-tag reveal">Formas de Atendimento</div>
-    <h2 class="section-title reveal">Convênios & <em>Pagamento</em></h2>
-    <p class="section-lead reveal">Trabalhamos com os principais planos de saúde e diversas formas de pagamento para facilitar o seu acesso.</p>
+  <h2 class="section-title reveal">
+    Convênios & <em>Formas de Pagamento</em>
+  </h2>    <p class="section-lead reveal">Trabalhamos com os principais planos de saúde e diversas formas de pagamento para facilitar o seu acesso.</p>
     <div class="section-divider reveal"></div>
+    <h3 class="payment-title reveal">
+    Convênios
+    </h3>
     <div class="convenios-grid">
-      <div class="convenio-card reveal"><div class="conv-icon">🏥</div>Unimed</div>
-      <div class="convenio-card reveal"><div class="conv-icon">🏥</div>Bradesco Saúde</div>
-      <div class="convenio-card reveal"><div class="conv-icon">🏥</div>SulAmérica</div>
-      <div class="convenio-card reveal"><div class="conv-icon">🏥</div>Amil</div>
-      <div class="convenio-card reveal"><div class="conv-icon">💳</div>Particular</div>
-      <div class="convenio-card reveal"><div class="conv-icon">💳</div>Cartão de Crédito</div>
-      <div class="convenio-card reveal"><div class="conv-icon">📱</div>PIX</div>
-      <div class="convenio-card reveal"><div class="conv-icon">💵</div>Dinheiro</div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/bradesco-saude.webp" alt="Bradesco Saúde">
     </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/cassi.webp" alt="CASSI">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/medprev.webp" alt="Medprev">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/sanitas.webp" alt="Sanitas">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/camed.webp" alt="Camed">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/medpless.webp" alt="Medpless">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/fusex.webp" alt="FUSEX">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/geap.webp" alt="GEAP Saúde">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/solumedi.webp" alt="SoluMedi">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/capesesp.webp" alt="CAPESEP">
+    </div>
+
+    <div class="convenio-card reveal">
+      <img src="img/convenios/medisaude.webp" alt="MediSaúde">
+    </div>
+
+  </div>
+  <h3 class="payment-title reveal">
+  Formas de Pagamento
+  </h3>
+
+  <div class="convenios-grid">
+
+  <div class="convenio-card reveal">
+    <img src="img/pagamento/pix.webp" alt="PIX">
+  </div>
+
+  <div class="convenio-card reveal">
+    <img src="img/pagamento/cartao-debito.webp" alt="Cartão de Débito">
+  </div>
+
+  <div class="convenio-card reveal">
+    <img src="img/pagamento/cartao-credito.webp" alt="Cartão de Crédito">
+  </div>
+
+  <div class="convenio-card reveal">
+    <img src="img/pagamento/dinheiro.webp" alt="Dinheiro">
+  </div>
+
+  </div>
     <p class="convenio-note reveal">⚠️ Consulte nossa equipe para confirmar a cobertura do seu convênio: <strong>(77) 99853-6323</strong></p>
   </div>
 </section>
@@ -789,7 +876,7 @@
         </div>
         <div class="form-group">
           <label>Convênio</label>
-          <select id="fconv"><option value="">Selecione...</option><option>Particular</option><option>Unimed</option><option>Bradesco Saúde</option><option>SulAmérica</option><option>Amil</option><option>Outro</option></select>
+          <select id="fconv"><option value="">Selecione...</option><option>Particular</option><option>Bradesco Saúde</option><option>Cassi</option><option>Medprev</option><option>Sanitas</option><option>Camed</option><option>Medpless</option><option>Fusex</option><option>Geap</option><option>SoluMedi</option><option>Capesesp</option><option>MediSaúde</option></select>
         </div>
       </div>
       <div class="form-row reveal">
@@ -824,7 +911,7 @@
 <section id="cta-final">
   <div class="container">
     <h2>Sua Visão Merece os<br/><em>Melhores Cuidados</em></h2>
-    <p>Agende sua consulta agora e conte com especialistas em Catarata, Retina e Córnea. Mais de 30.000 pacientes confiam na IOB Hospital do Olho.</p>
+    <p>Agende sua consulta agora e conte com especialistas em Catarata, Retina, Córnea e Glaucoma. Mais de 30.000 pacientes confiam na IOB Hospital do Olho.</p>
     <div class="cta-btns">
       <a class="btn-primary" href="#agendamento">📅 Agendar Consulta</a>
       <a class="btn-whatsapp" href="https://wa.me/5577998536323?text=Ol%C3%A1%21%20Encontrei%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
@@ -840,7 +927,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">IOB Hospital do Olho</div>
-      <p class="footer-brand-desc">Referência em oftalmologia no Oeste da Bahia. Especialistas em Catarata, Retina e Córnea com mais de 30.000 pacientes atendidos.</p>
+      <p class="footer-brand-desc">Referência em oftalmologia no Oeste da Bahia. Especialistas em Catarata, Retina, Córnea e Glaucoma com mais de 30.000 pacientes atendidos.</p>
       <div class="footer-social">
         <a class="social-btn" href="https://www.instagram.com/iob_lem/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <img src="Instagram.png" alt="Instagram" style="width:40px;height:40px;object-fit:contain;" />
